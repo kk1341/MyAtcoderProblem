@@ -1,1 +1,6 @@
 #!/usr/bin/env python3
+a, b = map(int, input().split())
+if a == b:
+    print(-1)
+else:
+    print(6-(a+b))
