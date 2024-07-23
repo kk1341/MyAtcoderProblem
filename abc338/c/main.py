@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+n = int(input())
+Q = list(map(int, input().split()))
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+INF = 10**18
+ans = 0
+
+for x in range(max(Q) + 1):
+    y = INF
+    for i in range(n):
+        if A[i] * x > Q[i]:
+            y = -INF
+        elif B[i] > 0:
+            y = min(y, (Q[i] - A[i] * x) // B[i])
+
+    ans = max(ans, x + y)
+
+print(ans)
